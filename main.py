@@ -21,7 +21,7 @@ import os
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
-class MainHandler(webapp2.RequestHandler) :
+class MainHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write('Hello world!')
         templates = jinja_environment.get_template('templateproject.html')
