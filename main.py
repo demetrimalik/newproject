@@ -31,9 +31,12 @@ class NextHandler(webapp2.RequestHandler):
     def get(self):
         guestbook_name = self.request.get('madlib')
         #dictionary= {'Adjective, Noun, Name, Verb, Number, Color '}
-        dictionary= {'noun': self.request.get}
         app = webapp2.WSGIApplication
         templates = jinja_environment.get_template('templateproject.html')
+        mg = self.request.get("Adjective")
+        mg2= self.request.get("Noun")
+        mg3= self.request.get("Name")
+        dictionary= {"mg":mg , "mg2": mg2, "mg3": mg3}
         self.response.write(templates.render(dictionary))
 
 app = webapp2.WSGIApplication([
