@@ -1,3 +1,6 @@
+
+
+
 #!/usr/bin/env python
 #
 # Copyright 2007 Google Inc.
@@ -23,7 +26,7 @@ jinja_environment = jinja2.Environment(
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')rt5yr5e6y
+        self.response.write('Hello world!')
         templates = jinja_environment.get_template('templateproject.html')
 
 class NextHandler(webapp2.RequestHandler):
@@ -33,10 +36,10 @@ class NextHandler(webapp2.RequestHandler):
         #dictionary= {'Adjective, Noun, Name, Verb, Number, Color '}
         app = webapp2.WSGIApplication
         templates = jinja_environment.get_template('templateproject.html')
+        mg3= self.request.get("Name")
         mg = self.request.get("Adjective")
         mg2= self.request.get("Noun")
-        mg3= self.request.get("Name")
-        dictionary= {"mg":mg , "mg2": mg2, "mg3": mg3}
+        dictionary= {"mg3":mg2 , "mg": mg3, "mg2": mg}
         self.response.write(templates.render(dictionary))
 
 app = webapp2.WSGIApplication([
